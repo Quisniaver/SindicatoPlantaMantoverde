@@ -1,0 +1,7 @@
+@mixin sombra-card($color, $difusion) {
+  box-shadow: 0 4px 10px rgba($color, $difusion);
+  transition: transform 0.2s;
+  &:hover {
+    transform: scale(1.02);
+  }
+}

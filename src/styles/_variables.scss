@@ -1,0 +1,39 @@
+// _variables.scss - Paleta optimizada basada en tu gradiente
+$color-blanco: #FFFFFF;
+$color-gris-claro: #D4D4D4;
+$color-gris-medio: #898B89;
+$color-gris-oscuro: #727272;
+$color-marron-oscuro: #6B421A;
+$color-marron-medio: #A77C48;
+$color-verde-oscuro: #1A5923;
+$color-verde-medio: #1F6E28;
+$color-verde-corporativo: #209134;
+$color-verde-claro: #368345;
+
+// Gradientes simplificados
+$gradiente-principal: linear-gradient(135deg, $color-marron-oscuro 70%, $color-verde-corporativo 100%);
+$gradiente-secundario: linear-gradient(135deg, $color-verde-medio 0%, $color-verde-claro 100%);
+$gradiente-dorado: linear-gradient(135deg, $color-marron-medio 0%, $color-marron-oscuro 100%);
+$gradiente-header: linear-gradient(90deg, $color-blanco 0%, $color-gris-claro 12%, $color-gris-medio 17%, $color-marron-oscuro 23%, $color-verde-oscuro 33%, $color-verde-medio 40%, $color-verde-corporativo 75%, $color-verde-claro 80%, $color-gris-oscuro 83%, $color-gris-claro 87%, $color-blanco 100%);
+
+// Colores para componentes
+$color-texto-oscuro: #1E293B;
+$color-texto-claro: #FFFFFF;
+$color-fondo: #F8FAFC;
+$color-borde: #E2E8F0;
+
+// Tipografía
+$font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font-weight-normal: 400;
+$font-weight-bold: 600;
+
+// Espaciados
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+
+// Bordes
+$border-radius: 8px;
+$border-radius-lg: 12px;

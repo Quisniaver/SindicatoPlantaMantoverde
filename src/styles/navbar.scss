@@ -1,0 +1,181 @@
+@import "./variables";
+
+.navbar-custom {
+  background: $gradiente-header;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1030;
+  padding: 0.5rem 0;
+
+  .navbar-brand {
+    color: $color-texto-claro !important;
+    font-size: 1.3rem;
+    font-weight: $font-weight-bold;
+
+    &:hover {
+      color: $color-marron-medio !important;
+    }
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid $color-marron-medio;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .brand-text {
+    color: $color-texto-claro;
+    font-weight: $font-weight-bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-link {
+    color: $color-texto-claro !important;
+    margin: 0 8px;
+    font-weight: $font-weight-normal;
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem !important;
+    border-radius: $border-radius;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 2px;
+      background-color: $color-marron-medio;
+      width: 0;
+      transition: width 0.3s ease;
+      margin-top: 3px;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+
+    &:hover {
+      color: $color-marron-medio !important;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  .navbar-toggler {
+    border-color: $color-texto-claro;
+    
+    &:focus {
+      box-shadow: 0 0 0 2px $color-marron-medio;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+  }
+}
+
+// Slideshow Section
+.navbar-slideshow {
+  margin-top: 76px; // Altura del navbar fixed
+
+  .carousel {
+    .slide-image {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+
+    .slide-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slide-content {
+      text-align: center;
+      color: $color-texto-claro;
+      max-width: 600px;
+
+      h2 {
+        font-size: 3rem;
+        font-weight: $font-weight-bold;
+        margin-bottom: $spacing-md;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        color: $color-marron-medio;
+      }
+
+      p {
+        font-size: 1.3rem;
+        margin-bottom: $spacing-lg;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        color: $color-gris-claro;
+      }
+
+      .btn-slide {
+        background: $gradiente-dorado;
+        color: $color-texto-claro;
+        padding: $spacing-sm $spacing-lg;
+        border: none;
+        border-radius: $border-radius;
+        font-weight: $font-weight-bold;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+          background: $gradiente-principal;
+        }
+      }
+    }
+  }
+
+  .carousel-fade {
+    .carousel-item {
+      transition: opacity 1.5s ease !important;
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .navbar-custom {
+    .navbar-brand {
+      font-size: 1.1rem;
+    }
+
+    .logo {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .navbar-slideshow {
+    margin-top: 70px;
+
+    .carousel {
+      .slide-content {
+        h2 {
+          font-size: 2rem;
+        }
+
+        p {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}

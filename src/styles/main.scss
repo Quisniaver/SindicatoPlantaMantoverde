@@ -1,0 +1,9 @@
+@import "./variables";
+@import "./mixins";
+
+// Estilos globales aquí
+body {
+  font-family: $font-family-base;
+  background-color: $color-fondo;
+  color: $color-texto-oscuro;
+}
