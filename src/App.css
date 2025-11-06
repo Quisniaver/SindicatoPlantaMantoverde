@@ -1,3 +1,7 @@
+/* ================================
+   🌿 ESTILOS BASE - SINDICATO MANTOVERDE
+   ================================ */
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,19 +9,29 @@
   text-align: center;
 }
 
+/* 🔹 Contenido principal */
+.main-content {
+  margin-top: 80px; /* Mismo valor que la altura del navbar */
+  min-height: calc(100vh - 80px); /* Ocupa el resto de la pantalla */
+}
+
+/* 🔹 Logo */
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+/* 🔹 Animación del logo */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -27,16 +41,19 @@
   }
 }
 
+/* Solo anima si el usuario no ha reducido el movimiento */
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
 }
 
+/* 🔹 Tarjeta base */
 .card {
   padding: 2em;
 }
 
+/* 🔹 Texto auxiliar */
 .read-the-docs {
   color: #888;
 }

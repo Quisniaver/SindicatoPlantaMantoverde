@@ -1,5 +1,6 @@
 @import "./variables";
 
+
 .footer {
   background: $gradiente-principal;
   color: $color-texto-claro;
@@ -167,6 +168,82 @@
         text-align: center !important;
         margin-top: 1rem;
       }
+    }
+  }
+}
+
+/* =========================================================
+   🎠 Carrusel institucional arriba del footer
+   ========================================================= */
+
+.footer-carousel-section {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(240, 240, 240, 1));
+  text-align: center;
+  padding: 2rem 0 3rem;
+  border-top: 4px solid $color-marron-medio;
+  border-bottom: 3px solid rgba($color-marron-medio, 0.4);
+
+  .footer-carousel {
+    margin-bottom: 2rem;
+
+    img {
+      height: 420px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 3px solid rgba($color-marron-medio, 0.3);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .carousel-caption {
+      background: rgba(0, 0, 0, 0.45);
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      backdrop-filter: blur(3px);
+
+      h5 {
+        font-weight: $font-weight-bold;
+        color: $color-blanco;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+      }
+
+      p {
+        color: $color-gris-claro;
+        font-style: italic;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  /* 🧾 Texto institucional debajo del carrusel */
+  .footer-carousel-text {
+    max-width: 900px;
+    margin: 0 auto;
+    color: $color-marron-oscuro;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-weight: 500;
+    padding: 0 1.5rem;
+
+    strong {
+      color: $color-marron-medio;
+      font-weight: $font-weight-bold;
+    }
+  }
+}
+
+/* 📱 Ajustes responsive */
+@media (max-width: 768px) {
+  .footer-carousel-section {
+    padding: 1rem 0 2rem;
+
+    .footer-carousel img {
+      height: 250px;
+    }
+
+    .footer-carousel-text {
+      font-size: 0.95rem;
+      line-height: 1.4;
+      padding: 0 1rem;
     }
   }
 }

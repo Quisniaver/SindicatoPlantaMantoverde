@@ -1,57 +1,86 @@
-/* Reset básico */
+/* =========================================================
+   🌿 ESTILOS GLOBALES - SINDICATO MANTOVERDE
+   ========================================================= */
+
+/* 🧩 Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Variables CSS globales */
+/* 💬 Variables CSS globales */
 :root {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   font-weight: 400;
-  
-  /* Mejoras de renderizado */
+
+  /* Renderizado más suave */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* 🎨 Colores institucionales */
+  --verde-principal: #1F6E28;
+  --verde-oscuro: #1A5923;
+  --marron-medio: #a77c48;
+  --gris-claro: #cccccc;
+  --blanco: #ffffff;
+  --negro: #333333;
 }
 
-/* Body corregido - SIN display: flex que causa pantalla blanca */
+/* =========================================================
+   🖥️ Body principal (ajustado para navbar fijo)
+   ========================================================= */
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #ffffff;
-  color: #333333;
+  background-color: var(--blanco);
+  color: var(--negro);
+
+  /* ✅ Compensa la altura del navbar fijo */
+  padding-top: 90px; /* Ajusta entre 80px - 100px según el alto de tu navbar */
 }
 
-/* Contenedor principal de React */
+/* 📦 Contenedor principal de React */
 #root {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* Estilos para enlaces */
+/* =========================================================
+   🔗 Enlaces
+   ========================================================= */
 a {
   font-weight: 500;
-  color: #1F6E28; /* Usando tu verde corporativo */
+  color: var(--verde-principal);
   text-decoration: inherit;
+  transition: all 0.25s ease;
 }
 
 a:hover {
-  color: #1A5923; /* Verde más oscuro */
+  color: var(--verde-oscuro);
 }
 
-/* Títulos */
+/* =========================================================
+   🧾 Títulos
+   ========================================================= */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--marron-medio);
+  font-weight: 700;
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
 
-/* Botones base */
+/* =========================================================
+   🟩 Botones base
+   ========================================================= */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -59,26 +88,42 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1F6E28; /* Tu verde */
-  color: white;
+  background-color: var(--verde-principal);
+  color: var(--blanco);
   cursor: pointer;
   transition: all 0.25s;
 }
 
 button:hover {
-  background-color: #1A5923; /* Verde oscuro */
+  background-color: var(--verde-oscuro);
 }
 
 button:focus,
 button:focus-visible {
-  outline: 4px auto #1F6E28;
+  outline: 4px auto var(--verde-principal);
 }
 
-/* Utilidades */
+/* =========================================================
+   🧭 Utilidades rápidas
+   ========================================================= */
 .text-center {
   text-align: center;
 }
 
 .mt-auto {
   margin-top: auto;
+}
+
+/* =========================================================
+   📱 Ajustes responsive
+   ========================================================= */
+@media (max-width: 768px) {
+  body {
+    padding-top: 120px; /* Más espacio si el navbar crece en móvil */
+  }
+}
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.4em;
+  }
 }

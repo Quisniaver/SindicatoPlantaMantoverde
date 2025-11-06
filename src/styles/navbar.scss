@@ -1,5 +1,16 @@
 @import "./variables";
 
+// Verificación adicional en Navbar.scss
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 30px;
+  z-index: 1000;
+  background: $gradiente-header;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .navbar-custom {
   background: $gradiente-header;
   transition: all 0.3s ease;

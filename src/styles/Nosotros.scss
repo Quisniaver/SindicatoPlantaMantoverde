@@ -32,9 +32,57 @@
 
       p {
         font-size: 1.2rem;
-        color: $color-gris-claro;
+        color: $color-texto-oscuro;
         line-height: 1.7;
         text-align: justify;
+      }
+    }
+
+    // 🎠 Sección Carrusel
+    .nosotros-carousel {
+      max-width: 900px;
+      width: 100%;
+      margin: 2rem auto 3rem;
+      border-radius: $border-radius;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease-in-out;
+
+      img {
+        height: 450px;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .carousel-caption {
+        background: rgba(0, 0, 0, 0.45);
+        border-radius: 10px;
+        padding: 1rem 1.5rem;
+        backdrop-filter: blur(4px);
+
+        h5 {
+          color: $color-blanco;
+          font-weight: $font-weight-bold;
+          text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
+        }
+
+        p {
+          color: $color-gris-claro;
+          font-size: 1rem;
+          margin-top: 0.5rem;
+        }
+      }
+
+      // Flechas personalizadas
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        filter: invert(1) sepia(1) hue-rotate(20deg) saturate(3);
+      }
+
+      // Hover suave sobre el carrusel
+      &:hover {
+        transform: scale(1.01);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
       }
     }
 
@@ -50,12 +98,12 @@
         margin-bottom: $spacing-lg;
       }
 
+      // 🟣 Grid responsivo para las tarjetas
       .directiva-grid {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
         justify-content: center;
-        align-items: stretch;
-        flex-wrap: wrap;
-        gap: $spacing-lg;
+        gap: 2rem;
         width: 100%;
       }
 
@@ -64,18 +112,24 @@
         background: $color-blanco;
         border-radius: $border-radius;
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-        width: 260px;
         text-align: center;
         padding: $spacing-lg;
         transition: all 0.3s ease;
         color: $color-texto-oscuro;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        align-items: center;
+        justify-content: flex-start;
+        overflow: hidden;
 
-        &:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        img.foto-directiva {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-bottom: 1rem;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+          transition: all 0.4s ease; // 🔹 transición suave
         }
 
         h3 {
@@ -88,6 +142,17 @@
         p {
           color: $color-gris-claro;
           font-size: 1rem;
+        }
+
+        // ✨ Efecto hover completo (tarjeta + imagen)
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+
+          img.foto-directiva {
+            transform: scale(1.1); // 🔍 zoom sutil
+            box-shadow: 0 0 20px rgba(218, 165, 32, 0.4); // 💛 brillo dorado suave
+          }
         }
       }
     }
@@ -110,6 +175,12 @@
         }
       }
 
+      .nosotros-carousel {
+        img {
+          height: 280px;
+        }
+      }
+
       .directiva-section {
         h2 {
           font-size: 1.8rem;
@@ -117,7 +188,7 @@
 
         .directiva-card {
           width: 100%;
-          max-width: 300px;
+          max-width: 320px;
         }
       }
     }

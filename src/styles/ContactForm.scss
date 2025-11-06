@@ -1,0 +1,201 @@
+// src/components/ContactForm.scss
+@import "./variables";
+
+.contact-form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: $spacing-xl;
+  background: $color-blanco;
+  border-radius: $border-radius-lg;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  .contact-form-header {
+    text-align: center;
+    margin-bottom: $spacing-lg;
+
+    h2 {
+      background: $gradiente-principal;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 2.5rem;
+      font-weight: $font-weight-bold;
+      margin-bottom: $spacing-sm;
+    }
+
+    p {
+      color: $color-texto-oscuro;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+  }
+
+  .contact-form {
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: $spacing-md;
+      margin-bottom: $spacing-md;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: $spacing-sm;
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-weight: $font-weight-bold;
+        color: $color-texto-oscuro;
+        margin-bottom: $spacing-xs;
+        font-size: 0.95rem;
+
+        &::after {
+          content: '*';
+          color: #dc2626;
+          margin-left: 4px;
+          opacity: 0.7;
+        }
+
+        &:has(+ input:not([required]))::after,
+        &:has(+ select:not([required]))::after,
+        &:has(+ textarea:not([required]))::after {
+          content: '';
+        }
+      }
+
+      input,
+      select,
+      textarea {
+        padding: $spacing-sm;
+        border: 2px solid $color-borde;
+        border-radius: $border-radius;
+        font-family: $font-family-base;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        background: $color-blanco;
+
+        &:focus {
+          outline: none;
+          border-color: $color-verde-corporativo;
+          box-shadow: 0 0 0 3px rgba($color-verde-corporativo, 0.1);
+        }
+
+        &.error {
+          border-color: #dc2626;
+          box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+        }
+
+        &::placeholder {
+          color: $color-gris-medio;
+        }
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 120px;
+        font-family: $font-family-base;
+      }
+
+      .error-message {
+        color: #dc2626;
+        font-size: 0.875rem;
+        margin-top: $spacing-xs;
+        font-weight: $font-weight-normal;
+      }
+    }
+
+    .submit-button {
+      width: 100%;
+      padding: $spacing-md $spacing-lg;
+      background: $gradiente-principal;
+      color: $color-texto-claro;
+      border: none;
+      border-radius: $border-radius;
+      font-size: 1.1rem;
+      font-weight: $font-weight-bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: $spacing-sm;
+
+      &:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      &:active:not(:disabled) {
+        transform: translateY(0);
+      }
+
+      &:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
+
+      &.submitting {
+        background: $gradiente-dorado;
+      }
+
+      .spinner {
+        width: 20px;
+        height: 20px;
+        border: 2px solid transparent;
+        border-top: 2px solid $color-blanco;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .contact-form-container {
+    padding: $spacing-md;
+    margin: $spacing-sm;
+
+    .contact-form-header {
+      h2 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+// Estados de carga y éxito
+.form-success {
+  text-align: center;
+  padding: $spacing-xl;
+
+  .success-icon {
+    font-size: 4rem;
+    color: $color-verde-corporativo;
+    margin-bottom: $spacing-md;
+  }
+
+  h3 {
+    color: $color-texto-oscuro;
+    margin-bottom: $spacing-sm;
+  }
+
+  p {
+    color: $color-gris-oscuro;
+    line-height: 1.6;
+  }
+}
