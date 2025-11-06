@@ -1,0 +1,125 @@
+@import "./variables";
+
+.nosotros {
+  background: $color-blanco;
+  color: $color-texto-oscuro;
+  min-height: 100vh;
+  padding: $spacing-xl 0;
+  display: flex;
+  justify-content: center;
+
+  .nosotros-content {
+    max-width: 1100px;
+    width: 100%;
+    padding: 0 $spacing-md;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    // 🟣 Sección "Quiénes Somos"
+    .quienes-somos {
+      margin-bottom: $spacing-xl;
+      max-width: 900px;
+
+      h1 {
+        font-size: 3rem;
+        color: $color-marron-medio;
+        font-weight: $font-weight-bold;
+        margin-bottom: $spacing-md;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+      }
+
+      p {
+        font-size: 1.2rem;
+        color: $color-gris-claro;
+        line-height: 1.7;
+        text-align: justify;
+      }
+    }
+
+    // 🟣 Sección Directiva
+    .directiva-section {
+      margin-top: $spacing-xl;
+      width: 100%;
+
+      h2 {
+        font-size: 2.2rem;
+        color: $color-marron-medio;
+        font-weight: $font-weight-bold;
+        margin-bottom: $spacing-lg;
+      }
+
+      .directiva-grid {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        flex-wrap: wrap;
+        gap: $spacing-lg;
+        width: 100%;
+      }
+
+      // 🟤 Tarjetas de la directiva
+      .directiva-card {
+        background: $color-blanco;
+        border-radius: $border-radius;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        width: 260px;
+        text-align: center;
+        padding: $spacing-lg;
+        transition: all 0.3s ease;
+        color: $color-texto-oscuro;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        h3 {
+          color: $color-marron-medio;
+          font-weight: $font-weight-bold;
+          margin-bottom: $spacing-xs;
+          font-size: 1.2rem;
+        }
+
+        p {
+          color: $color-gris-claro;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+// 📱 Responsivo
+@media (max-width: 768px) {
+  .nosotros {
+    padding: $spacing-lg 0;
+
+    .nosotros-content {
+      .quienes-somos {
+        h1 {
+          font-size: 2.2rem;
+        }
+
+        p {
+          font-size: 1.05rem;
+        }
+      }
+
+      .directiva-section {
+        h2 {
+          font-size: 1.8rem;
+        }
+
+        .directiva-card {
+          width: 100%;
+          max-width: 300px;
+        }
+      }
+    }
+  }
+}

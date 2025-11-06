@@ -26,7 +26,7 @@ function CustomNavbar() {
         <Navbar.Collapse id="navbar-nav">
           <Nav className="ms-auto text-center">
             <Nav.Link as={Link} to="/">Inicio</Nav.Link>
-            <Nav.Link as={Link} to="/nosotros">Nosotros</Nav.Link>
+            <Nav.Link as={Link} to="/Nosotros">Nosotros</Nav.Link>
             <Nav.Link as={Link} to="/servicios">Servicios</Nav.Link>
             <Nav.Link as={Link} to="/noticias">Noticias</Nav.Link>
             <Nav.Link as={Link} to="/documentos">Documentos</Nav.Link>
