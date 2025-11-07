@@ -1,10 +1,17 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+
+// 🟩 Páginas principales
 import Inicio from "./pages/Inicio";
 import Nosotros from "./pages/Nosotros";
 import Servicios from "./pages/Servicios";
-import Contacto from "./pages/ContactoForm";
+import Contacto from "./pages/Contacto";
+
+// 🟦 Convenios y Beneficios
+import Clinica from "./pages/Clinica";
+import Optica from "./pages/Optica";
+import ConveniosCiudad from "./pages/ConveniosCiudad";
 
 function App() {
   return (
@@ -12,9 +19,14 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Inicio />} />
-      <Route path="/nosotros" element={<Nosotros />} />
-        <Route path="/servicios" element={<Servicios />} /> */
-         <Route path="/contacto" element={<Contacto />} /> */
+        <Route path="/Nosotros" element={<Nosotros />} />
+        <Route path="/Servicios" element={<Servicios />} />
+        <Route path="/Contacto" element={<Contacto />} />
+
+        {/* 🟦 Convenios y Beneficios */}
+        <Route path="/Clinica" element={<Clinica />} />
+        <Route path="/Optica" element={<Optica />} />
+        <Route path="/ConveniosCiudad" element={<ConveniosCiudad />} />
       </Routes>
       <Footer />
     </Router>
