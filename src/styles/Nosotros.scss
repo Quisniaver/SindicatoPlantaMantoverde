@@ -4,23 +4,76 @@
   background: $color-blanco;
   color: $color-texto-oscuro;
   min-height: 100vh;
-  padding: $spacing-xl 0;
   display: flex;
   justify-content: center;
 
   .nosotros-content {
     max-width: 1100px;
     width: 100%;
-    padding: 0 $spacing-md;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
 
+    // Contenedor de sección completa
+    .full-section {
+      width: 100%;
+      padding: 4rem 0;
+      margin: 0;
+      position: relative;
+
+      // Solo aplicar resaltado a las secciones que tienen la clase active
+      &.active {
+        background: linear-gradient(90deg, 
+          rgba($color-marron-medio, 0.05) 0%, 
+          rgba($color-marron-medio, 0.02) 10%,
+          transparent 20%,
+          transparent 80%,
+          rgba($color-marron-medio, 0.02) 90%,
+          rgba($color-marron-medio, 0.05) 100%);
+        
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 6px;
+          background: linear-gradient(
+            to bottom,
+            $color-marron-medio,
+            darken($color-marron-medio, 10%)
+          );
+          box-shadow: 2px 0 8px rgba($color-marron-medio, 0.3);
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          width: 6px;
+          background: linear-gradient(
+            to bottom,
+            $color-marron-medio,
+            darken($color-marron-medio, 10%)
+          );
+          box-shadow: -2px 0 8px rgba($color-marron-medio, 0.3);
+        }
+      }
+
+      // Contenido interno de cada sección
+      .section-content {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 $spacing-md;
+      }
+    }
+
     // 🟣 Sección "Quiénes Somos"
     .quienes-somos {
-      margin-bottom: $spacing-xl;
-      max-width: 900px;
+      text-align: center;
 
       h1 {
         font-size: 3rem;
@@ -38,11 +91,9 @@
       }
     }
 
-    // 🎠 Sección Carrusel
+    // 🎠 Sección Carrusel (sin cambios especiales)
     .nosotros-carousel {
-      max-width: 900px;
       width: 100%;
-      margin: 2rem auto 3rem;
       border-radius: $border-radius;
       overflow: hidden;
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
@@ -73,32 +124,94 @@
         }
       }
 
-      // Flechas personalizadas
       .carousel-control-prev-icon,
       .carousel-control-next-icon {
         filter: invert(1) sepia(1) hue-rotate(20deg) saturate(3);
       }
+    }
 
-      // Hover suave sobre el carrusel
-      &:hover {
-        transform: scale(1.01);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    // 👁️ Sección Visión
+    .vision-section {
+      text-align: left;
+
+      h2 {
+        font-size: 2.5rem;
+        color: $color-marron-medio;
+        font-weight: $font-weight-bold;
+        margin-bottom: $spacing-md;
+        text-align: center;
+      }
+
+      .intro {
+        font-size: 1.3rem;
+        line-height: 1.6;
+        margin-bottom: $spacing-lg;
+        text-align: center;
+        font-weight: 500;
+        color: $color-texto-oscuro;
+      }
+
+      .vision-list {
+        ul {
+          list-style-type: none;
+          padding-left: 0;
+          columns: 2;
+          column-gap: 3rem;
+
+          li {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: $spacing-md;
+            padding-left: $spacing-lg;
+            position: relative;
+            text-align: left;
+            break-inside: avoid;
+
+            &:before {
+              content: "▸";
+              color: $color-marron-medio;
+              font-weight: bold;
+              position: absolute;
+              left: 0;
+              font-size: 1.2rem;
+            }
+          }
+        }
       }
     }
 
-    // 🟣 Sección Directiva
-    .directiva-section {
-      margin-top: $spacing-xl;
-      width: 100%;
+    // 🎯 Sección Misión
+    .mision-section {
+      text-align: left;
 
       h2 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
+        color: $color-marron-medio;
+        font-weight: $font-weight-bold;
+        margin-bottom: $spacing-md;
+        text-align: center;
+      }
+
+      p {
+        font-size: 1.2rem;
+        line-height: 1.7;
+        margin-bottom: $spacing-lg;
+        text-align: justify;
+        color: $color-texto-oscuro;
+      }
+    }
+
+    // 👥 Sección Directiva
+    .directiva-content {
+      text-align: center;
+
+      h2 {
+        font-size: 2.5rem;
         color: $color-marron-medio;
         font-weight: $font-weight-bold;
         margin-bottom: $spacing-lg;
       }
 
-      // 🟣 Grid responsivo para las tarjetas
       .directiva-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -106,55 +219,54 @@
         gap: 2rem;
         width: 100%;
       }
+    }
+  }
+}
 
-      // 🟤 Tarjetas de la directiva
-      .directiva-card {
-        background: $color-blanco;
-        border-radius: $border-radius;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        padding: $spacing-lg;
-        transition: all 0.3s ease;
-        color: $color-texto-oscuro;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        overflow: hidden;
+// 🟤 Tarjetas de la directiva (mantener los estilos existentes)
+.directiva-card {
+  background: $color-blanco;
+  border-radius: $border-radius;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: $spacing-lg;
+  transition: all 0.3s ease;
+  color: $color-texto-oscuro;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
 
-        img.foto-directiva {
-          width: 150px;
-          height: 150px;
-          border-radius: 50%;
-          object-fit: cover;
-          margin-bottom: 1rem;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-          transition: all 0.4s ease; // 🔹 transición suave
-        }
+  img.foto-directiva {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
+  }
 
-        h3 {
-          color: $color-marron-medio;
-          font-weight: $font-weight-bold;
-          margin-bottom: $spacing-xs;
-          font-size: 1.2rem;
-        }
+  h3 {
+    color: $color-marron-medio;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-xs;
+    font-size: 1.2rem;
+  }
 
-        p {
-          color: $color-gris-claro;
-          font-size: 1rem;
-        }
+  p {
+    color: $color-gris-claro;
+    font-size: 1rem;
+  }
 
-        // ✨ Efecto hover completo (tarjeta + imagen)
-        &:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 
-          img.foto-directiva {
-            transform: scale(1.1); // 🔍 zoom sutil
-            box-shadow: 0 0 20px rgba(218, 165, 32, 0.4); // 💛 brillo dorado suave
-          }
-        }
-      }
+    img.foto-directiva {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(218, 165, 32, 0.4);
     }
   }
 }
@@ -162,9 +274,22 @@
 // 📱 Responsivo
 @media (max-width: 768px) {
   .nosotros {
-    padding: $spacing-lg 0;
-
     .nosotros-content {
+      .full-section {
+        padding: 3rem 0;
+
+        &.active {
+          &::before,
+          &::after {
+            width: 3px;
+          }
+        }
+
+        .section-content {
+          padding: 0 $spacing-sm;
+        }
+      }
+
       .quienes-somos {
         h1 {
           font-size: 2.2rem;
@@ -181,14 +306,35 @@
         }
       }
 
-      .directiva-section {
+      .vision-section {
         h2 {
-          font-size: 1.8rem;
+          font-size: 2rem;
         }
 
-        .directiva-card {
-          width: 100%;
-          max-width: 320px;
+        .intro {
+          font-size: 1.1rem;
+        }
+
+        .vision-list {
+          ul {
+            columns: 1;
+          }
+        }
+      }
+
+      .mision-section {
+        h2 {
+          font-size: 2rem;
+        }
+
+        p {
+          font-size: 1.05rem;
+        }
+      }
+
+      .directiva-content {
+        h2 {
+          font-size: 2rem;
         }
       }
     }
