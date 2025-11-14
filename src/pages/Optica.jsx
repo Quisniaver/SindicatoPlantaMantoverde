@@ -1,38 +1,23 @@
-// src/App.jsx
-import { useState } from 'react'
 import PhotoCarousel from '../components/PhotoCarousel'
 import '../styles/Optica.scss'
 
 function Optica() {
-  const [activeTab, setActiveTab] = useState('beneficios')
-
-const beneficios = [
-  'Recibe una <strong>atención gratuita</strong> con nuestro Tecnólogo Médico en Oftalmología y Optometría, <strong>David Zúñiga González</strong>, al confeccionar tus lentes el mismo día en nuestra óptica.',
-  'Obtén un <strong>20% de descuento</strong> en tu receta completa: armazón + cristales.',
-  '<strong>Boleta inmediata</strong> para que puedas realizar tus reembolsos sin demoras.',
-  'Incluye también <strong>lentes de sol</strong> dentro del total de tu compra si lo deseas.',
-  'Disfruta de un <strong>estacionamiento exclusivo</strong> para nuestros clientes.',
-  'Accede a la opción de <strong>descuento por planilla en tres cuotas</strong>, con el respaldo del sindicato para mayor comodidad.'
-];
-
-
-
   const contacto = {
     direccion: "Edificio Portal Amunategui 489 local 106, La Serena",
     telefono: "+56 9 8575 0988",
     horario: "Lunes a Viernes: 9:00 - 19:00 hrs, Sábados: 10:00 - 14:00 hrs"
-  }
-
+  };
 
   return (
     <>
-      {/* Photo Carousel Section */}
+      {/* Carrusel de fotos */}
       <PhotoCarousel />
 
-      {/* Main Content */}
+      {/* Contenido principal */}
       <main className="main-content">
         <div className="container">
           <div className="content-wrapper">
+
             {/* Sidebar */}
             <aside className="sidebar">
               <div className="sidebar-card">
@@ -41,7 +26,6 @@ const beneficios = [
                   <strong>Destinatarios:</strong>
                   <p>Socios y cargas familiares del sindicato</p>
                 </div>
-               
                 <div className="info-item">
                   <strong>Contacto:</strong>
                   <p>David Zúñiga González</p>
@@ -59,15 +43,12 @@ const beneficios = [
                     width="100%"
                     height="250"
                     style={{ border: 0, borderRadius: '12px' }}
-                    allowFullScreen=""
+                    allowFullScreen
                     loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
                   ></iframe>
                 </div>
-
               </div>
 
-              {/* Información de Contacto en Sidebar */}
               <div className="sidebar-card">
                 <h3>Contacto Rápido</h3>
                 <div className="contact-sidebar">
@@ -78,116 +59,70 @@ const beneficios = [
                       <p>{contacto.telefono}</p>
                     </div>
                   </div>
-                 
                   <div className="contact-sidebar-item">
                     <span className="contact-icon">⏰</span>
                     <div>
                       <strong>Horario</strong>
                       <p>{contacto.horario}</p>
                     </div>
-
                   </div>
-                <div className="contact-sidebar-item">
-                  <span className="contact-icon">📸</span>
-                  <div>
-                    <strong>Instagram</strong>
-                    <p>
-                      <a 
-                        href="https://www.instagram.com/opticanortevision" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="social-link"
-                      >
-                        @opticanortevision
-                      </a>
-                    </p>
+                  <div className="contact-sidebar-item">
+                    <span className="contact-icon">📸</span>
+                    <div>
+                      <strong>Instagram</strong>
+                      <p>
+                        <a 
+                          href="https://www.instagram.com/opticanortevision"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="social-link"
+                        >
+                          @opticanortevision
+                        </a>
+                      </p>
+                    </div>
                   </div>
-                </div>
-  
                 </div>
               </div>
             </aside>
 
-            {/* Main Content Area */}
+            {/* Sección principal: Beneficios */}
             <div className="content-area">
-              {/* Tabs - Solo Beneficios y Condiciones */}
-              <div className="tabs">
-                <button 
-                  className={`tab ${activeTab === 'beneficios' ? 'active' : ''}`}
-                  onClick={() => setActiveTab('beneficios')}
-                >
-                  Beneficios
-                </button>
-                <button 
-                  className={`tab ${activeTab === 'condiciones' ? 'active' : ''}`}
-                  onClick={() => setActiveTab('condiciones')}
-                >
-                  Condiciones
-                </button>
-              </div>
+              <h2>Beneficios del Convenio</h2>
 
-              {/* Tab Content */}
-              <div className="tab-content">
-                {activeTab === 'beneficios' && (
-                  <div className="benefits-grid">
-                    {beneficios.map((beneficio, index) => (
-                      <div key={index} className="benefit-card">
-                        <div className="benefit-icon">
-                          {index === 0 && '🆓'}
-                          {index === 1 && '💰'}
-                          {index === 2 && '🧾'}
-                          {index === 3 && '🕶️'}
-                          {index === 4 && '🅿️'}
-                          {index === 5 && '📋'}
-                        </div>
-                        <p dangerouslySetInnerHTML={{ __html: beneficio }}></p>
-                      </div>
-                    ))}
-                  </div>
-                )}
+              <div className="benefits-text">
+                <p>
+                  En <strong>Óptica Norte Visión</strong>, nuestros socios y sus familias pueden acceder 
+                  a una <strong>atención gratuita</strong> con el Tecnólogo Médico en Oftalmología y 
+                  Optometría <strong>David Zúñiga González</strong>, siempre que confeccionen sus lentes 
+                  el mismo día en nuestra óptica.
+                </p>
 
-                {activeTab === 'condiciones' && (
-                  <div className="conditions">
-                    <h3>Condiciones del Convenio</h3>
-                    <div className="condition-list">
-                      <div className="condition-item">
-                        <h4>📋 Documentación Requerida</h4>
-                        <ul>
-                          <li>Carnet de identidad</li>
-                          <li>Certificado de socio activo del sindicato</li>
-                          <li>Receta médica actualizada (si aplica)</li>
-                        </ul>
-                      </div>
-                      <div className="condition-item">
-                        <h4>⏰ Horarios de Atención</h4>
-                        <p>{contacto.horario}</p>
-                      </div>
-                      <div className="condition-item">
-                        <h4>💳 Formas de Pago</h4>
-                        <ul>
-                          <li>Efectivo</li>
-                          <li>Tarjetas de débito y crédito</li>
-                          <li>Descuento por planilla (solo para convenios)</li>
-                        </ul>
-                      </div>
-                      <div className="condition-item">
-                        <h4>📍 Ubicación y Estacionamiento</h4>
-                        <ul>
-                          <li>{contacto.direccion}</li>
-                          <li>Estacionamiento exclusivo para clientes</li>
-                          <li>Fácil acceso y ubicación céntrica</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                )}
+                <p>
+                  Además, ofrecemos un <strong>20% de descuento</strong> en recetas completas, 
+                  incluyendo <strong>armazón y cristales</strong>. Recibirás tu 
+                  <strong> boleta inmediata</strong> para facilitar reembolsos sin demoras.
+                </p>
+
+                <p>
+                  Si lo deseas, también puedes incluir <strong>lentes de sol</strong> dentro del total 
+                  de tu compra. Y para tu comodidad, contamos con un 
+                  <strong> estacionamiento exclusivo</strong> para nuestros clientes.
+                </p>
+
+                <p>
+                  Finalmente, nuestros socios tienen la posibilidad de acceder a un 
+                  <strong> descuento por planilla en tres cuotas</strong>, respaldado por el sindicato, 
+                  brindando así una alternativa cómoda y segura para cuidar tu salud visual.
+                </p>
               </div>
             </div>
+
           </div>
         </div>
       </main>
     </>
-  )
+  );
 }
 
-export default Optica
+export default Optica;

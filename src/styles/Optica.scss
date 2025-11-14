@@ -1,6 +1,7 @@
 @import './variables.scss';
 @import './mixins.scss';
-// Mixins
+
+// 🔹 MIXINS BASE
 @mixin flex-center {
   display: flex;
   align-items: center;
@@ -26,14 +27,14 @@
       @content;
     }
   }
-  @if $breakpoint == tablet {
+  @else if $breakpoint == tablet {
     @media (max-width: 1024px) {
       @content;
     }
   }
 }
 
-// Reset y estilos base
+/* 🔹 RESET Y ESTILOS BASE */
 * {
   margin: 0;
   padding: 0;
@@ -57,7 +58,7 @@ body {
   }
 }
 
-// Header Styles
+/* 🔹 HEADER */
 .header {
   background: $gradiente-header;
   color: $color-texto-oscuro;
@@ -89,9 +90,9 @@ body {
   &-text {
     h1 {
       font-size: 1.8rem;
-      margin-bottom: 0.25rem;
       color: $color-verde-oscuro;
       font-weight: $font-weight-bold;
+      margin-bottom: 0.25rem;
 
       @include responsive(mobile) {
         font-size: 1.5rem;
@@ -105,6 +106,7 @@ body {
   }
 }
 
+/* 🔹 NAVBAR */
 .nav {
   display: flex;
   gap: $spacing-md;
@@ -133,10 +135,9 @@ body {
   }
 }
 
-// Hero Section
+/* 🔹 HERO SECTION */
 .hero {
   background: $color-blanco;
-  color: $color-texto-claro;
   padding: $spacing-xl 0;
 
   .container {
@@ -156,8 +157,8 @@ body {
     h1 {
       font-size: 3rem;
       margin-bottom: $spacing-sm;
-      line-height: 1.2;
       font-weight: $font-weight-bold;
+      line-height: 1.2;
 
       @include responsive(mobile) {
         font-size: 2.2rem;
@@ -168,10 +169,6 @@ body {
       font-size: 1.2rem;
       margin-bottom: $spacing-lg;
       opacity: 0.9;
-
-      @include responsive(mobile) {
-        font-size: 1.1rem;
-      }
     }
   }
 
@@ -194,21 +191,19 @@ body {
   color: $color-texto-claro;
   border: none;
   padding: $spacing-sm $spacing-lg;
-  font-size: 1.1rem;
   border-radius: $border-radius;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  font-size: 1.1rem;
   font-weight: $font-weight-bold;
-  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
 
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba($color-verde-corporativo, 0.3);
-    border-color: $color-blanco;
   }
 }
 
-// Main Content
+/* 🔹 MAIN CONTENT */
 .main-content {
   padding: $spacing-xl 0;
 
@@ -228,7 +223,7 @@ body {
   }
 }
 
-// Sidebar
+/* 🔹 SIDEBAR */
 .sidebar {
   display: flex;
   flex-direction: column;
@@ -268,17 +263,7 @@ body {
   }
 }
 
-.map-placeholder {
-  background-color: $color-gris-claro;
-  height: 150px;
-  border-radius: $border-radius;
-  @include flex-center;
-  margin-top: $spacing-sm;
-  color: $color-gris-oscuro;
-  font-weight: $font-weight-bold;
-}
-
-// Contact Sidebar
+/* 🔹 CONTACT SIDEBAR */
 .contact-sidebar {
   display: flex;
   flex-direction: column;
@@ -296,7 +281,6 @@ body {
 
   .contact-icon {
     font-size: 1.2rem;
-    flex-shrink: 0;
     color: $color-verde-corporativo;
   }
 
@@ -305,184 +289,76 @@ body {
     font-size: 0.9rem;
     color: $color-texto-oscuro;
     margin-bottom: 0.25rem;
-    font-weight: $font-weight-bold;
   }
 
   p {
     font-size: 0.85rem;
     color: $color-gris-medio;
     margin: 0;
-    line-height: 1.4;
   }
 }
 
-// Content Area
+/* 🔹 SECCIÓN DE BENEFICIOS (NARRATIVA) */
 .content-area {
   @include card-style;
   overflow: hidden;
+  padding: 2rem;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: $color-verde-oscuro;
+    font-size: 2rem;
+    font-weight: $font-weight-bold;
+  }
+
+  .benefits-text {
+    max-width: 850px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: $color-texto-oscuro;
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.8rem 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+
+    p {
+      margin-bottom: 1.3rem;
+      text-align: justify;
+
+      strong {
+        color: $color-verde-corporativo;
+      }
+    }
+  }
 
   @include responsive(tablet) {
     order: 1;
   }
 }
 
-// Tabs
-.tabs {
-  display: flex;
-  background-color: $color-gris-claro;
-  border-bottom: 1px solid $color-borde;
+/* 🔹 MAPA */
+.map-container {
+  margin-top: 1rem;
+  width: 100%;
+  height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 
-  @include responsive(mobile) {
-    flex-direction: column;
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
   }
 }
 
-.tab {
-  flex: 1;
-  padding: $spacing-md $spacing-lg;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: $font-weight-bold;
-  transition: all 0.3s ease;
-  color: $color-gris-medio;
-
-  @include responsive(mobile) {
-    text-align: left;
-    padding: $spacing-sm $spacing-md;
-  }
-
-  &:hover {
-    background-color: rgba($color-verde-corporativo, 0.1);
-    color: $color-verde-corporativo;
-  }
-
-  &.active {
-    background-color: $color-blanco;
-    color: $color-verde-corporativo;
-    border-bottom: 3px solid $color-verde-corporativo;
-
-    @include responsive(mobile) {
-      border-bottom: none;
-      border-left: 3px solid $color-verde-corporativo;
-    }
-  }
-}
-
-// Tab Content
-.tab-content {
-  padding: $spacing-lg;
-
-  @include responsive(mobile) {
-    padding: $spacing-md;
-  }
-}
-
-// Benefits Grid
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: $spacing-md;
-
-  @include responsive(mobile) {
-    grid-template-columns: 1fr;
-    gap: $spacing-sm;
-  }
-}
-
-.benefit-card {
-  display: flex;
-  align-items: flex-start;
-  gap: $spacing-sm;
-  padding: $spacing-md;
-  background: linear-gradient(135deg, $color-blanco 0%, $color-gris-claro 100%);
-  border-radius: $border-radius-lg;
-  border-left: 4px solid $color-verde-corporativo;
-  transition: all 0.3s ease;
-
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(135deg, $color-blanco 0%, lighten($color-verde-claro, 45%) 100%);
-  }
-
-  &-icon {
-    font-size: 2rem;
-    flex-shrink: 0;
-  }
-
-  p {
-    margin: 0;
-    color: $color-texto-oscuro;
-    line-height: 1.5;
-  }
-}
-
-// Conditions
-.conditions {
-  h3 {
-    color: $color-verde-oscuro;
-    margin-bottom: $spacing-lg;
-    font-size: 1.5rem;
-    font-weight: $font-weight-bold;
-  }
-}
-
-.condition-list {
-  display: grid;
-  gap: $spacing-md;
-}
-
-.condition-item {
-  background: linear-gradient(135deg, $color-blanco 0%, $color-gris-claro 100%);
-  padding: $spacing-md;
-  border-radius: $border-radius-lg;
-  border-left: 4px solid $color-verde-corporativo;
-
-  h4 {
-    color: $color-verde-oscuro;
-    margin-bottom: $spacing-sm;
-    font-size: 1.1rem;
-    font-weight: $font-weight-bold;
-    display: flex;
-    align-items: center;
-    gap: $spacing-xs;
-  }
-
-  ul {
-    padding-left: $spacing-md;
-
-    li {
-      margin-bottom: $spacing-xs;
-      color: $color-texto-oscuro;
-      position: relative;
-
-      &::before {
-        content: "•";
-        color: $color-verde-corporativo;
-        font-weight: bold;
-        position: absolute;
-        left: -$spacing-sm;
-      }
-    }
-  }
-
-  p {
-    color: $color-texto-oscuro;
-    line-height: 1.6;
-    margin: 0;
-  }
-}
-
-
-
-
-// Photo Carousel Styles (integración)
+/* 🔹 PHOTO CAROUSEL */
 .photo-carousel {
   padding: $spacing-xl 0;
   background: $color-fondo;
-  
+
   .carousel-container {
     position: relative;
     max-width: 1200px;
@@ -499,120 +375,24 @@ body {
     height: 500px;
 
     @include responsive(mobile) {
-      height: 400px;
-    }
-
-    @include responsive(mobile) {
-      height: 300px;
+      height: 350px;
     }
   }
 
   .carousel-slide {
-    position: relative;
     min-width: 100%;
     height: 100%;
-    
-    &.active {
-      .slide-content {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      
-      .indicator-progress {
-        animation: progress 5s linear;
-      }
-    }
+    position: relative;
   }
 
-  .slide-image {
-    position: relative;
+  .slide-image img {
     width: 100%;
     height: 100%;
-    
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .slide-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: $gradiente-principal;
-      opacity: 0.3;
-    }
-  }
-
-  .slide-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: $spacing-lg;
-    color: $color-texto-claro;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.5s ease;
-
-    @include responsive(mobile) {
-      padding: $spacing-md;
-    }
-  }
-
-  .slide-title {
-    font-size: 2rem;
-    font-weight: $font-weight-bold;
-    margin-bottom: $spacing-xs;
-    color: $color-texto-claro;
-
-    @include responsive(mobile) {
-      font-size: 1.5rem;
-    }
-  }
-
-  .slide-description {
-    font-size: 1.1rem;
-    margin-bottom: $spacing-md;
-    opacity: 0.9;
-
-    @include responsive(mobile) {
-      font-size: 1rem;
-    }
-  }
-
-  .slide-button {
-    background: $gradiente-secundario;
-    color: $color-texto-claro;
-    border: none;
-    padding: $spacing-xs $spacing-md;
-    border-radius: $border-radius;
-    font-weight: $font-weight-bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba($color-verde-corporativo, 0.3);
-    }
-  }
-
-  // ... (resto de estilos del carrusel igual que antes)
-}
-
-// Animaciones
-@keyframes progress {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
+    object-fit: cover;
   }
 }
 
+/* 🔹 ANIMACIONES */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -624,31 +404,19 @@ body {
   }
 }
 
-.tab-content > div {
-  animation: fadeIn 0.5s ease-in-out;
+.benefits-text p {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.6s ease forwards;
+
+  &:nth-child(2) { animation-delay: 0.1s; }
+  &:nth-child(3) { animation-delay: 0.2s; }
+  &:nth-child(4) { animation-delay: 0.3s; }
 }
 
-// Utilidades
-.text-center {
-  text-align: center;
-}
-
+/* 🔹 UTILIDADES */
+.text-center { text-align: center; }
 .mb-1 { margin-bottom: $spacing-sm; }
 .mb-2 { margin-bottom: $spacing-md; }
 .mt-1 { margin-top: $spacing-sm; }
 .mt-2 { margin-top: $spacing-md; }
-
-.map-container {
-  margin-top: 1rem;
-  width: 100%;
-  height: 250px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-
-  iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-}
