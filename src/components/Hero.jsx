@@ -1,5 +1,6 @@
 import { Carousel, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import "../styles/noticias.scss";
 import "../styles/hero.scss";
 
 // 🔹 Imágenes del carrusel
@@ -72,13 +73,13 @@ function Hero() {
         </Carousel>
       </div>
 
-      {/* Sección informativa debajo del carrusel */}
-      <section className="hero">
-        <Container>
+            {/* Sección informativa debajo del carrusel */}
+      <section>
+        <Container className="hero">
           <div className="hero-content">
             <h1>Sindicato Planta Mantoverde</h1>
             <p>
-              Trabajando unidos por el bienestar de nuestros asociados. 
+              Trabajando unidos por el bienestar de nuestros asociados.
               Representación, asesoría y apoyo para todos los trabajadores.
             </p>
             <div className="hero-buttons">
@@ -88,6 +89,72 @@ function Hero() {
               <Link to="/contacto" className="btn-secondary">
                 Contáctanos
               </Link>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+
+      {/* 🔹 Noticias debajo del Hero */}
+      <section className="noticias-section">
+        <Container>
+          <h2 className="noticias-title">Últimas Noticias</h2>
+
+          <div className="noticias-grid">
+            {/* Card 1 */}
+            <div className="card-noticia">
+              <img
+                src="https://via.placeholder.com/400x250"
+                alt="Noticia"
+                className="card-img"
+              />
+              <div className="card-body">
+                <h3 className="card-title">
+                  Nuevo Convenio para los Trabajadores
+                </h3>
+                <p className="card-text">
+                  Se firmó un acuerdo que mejora beneficios en salud y educación.
+                </p>
+                <Link to="/noticias" className="card-btn">
+                  Leer más
+                </Link>
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="card-noticia">
+              <img
+                src="https://via.placeholder.com/400x250"
+                alt="Noticia"
+                className="card-img"
+              />
+              <div className="card-body">
+                <h3 className="card-title">Capacitación 2025</h3>
+                <p className="card-text">
+                  Nuevos cursos técnicos gratuitos para asociados.
+                </p>
+                <Link to="/noticias" className="card-btn">
+                  Leer más
+                </Link>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="card-noticia">
+              <img
+                src="https://via.placeholder.com/400x250"
+                alt="Noticia"
+                className="card-img"
+              />
+              <div className="card-body">
+                <h3 className="card-title">Reunión con Directiva</h3>
+                <p className="card-text">
+                  Se abordaron mejoras en transporte y seguridad laboral.
+                </p>
+                <Link to="/noticias" className="card-btn">
+                  Leer más
+                </Link>
+              </div>
             </div>
           </div>
         </Container>
