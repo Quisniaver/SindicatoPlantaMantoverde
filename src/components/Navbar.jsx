@@ -33,15 +33,7 @@ function CustomNavbar() {
                 Convenios por Ciudad
               </NavDropdown.Item>
             </NavDropdown>
-              <NavDropdown title="Multimedia" id="multimedia-dropdown">
-              <NavDropdown.Item as={Link} to="/GaleriaFotos">
-                Galeria Fotos
-              </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/GaleriaVideos">
-                Galeria Videos
-              </NavDropdown.Item>
-            </NavDropdown>
-
+             <Nav.Link as={Link} to="/Multimedia">Multimedia</Nav.Link>
             <Nav.Link as={Link} to="/Noticias">Noticias</Nav.Link>
             <Nav.Link as={Link} to="/Documentos">Documentos</Nav.Link>
             <Nav.Link as={Link} to="/Contacto">Contacto</Nav.Link>

@@ -1,0 +1,26 @@
+@import "./variables";
+
+/* CONTENEDOR GENERAL */
+.multimedia-page {
+  background: $color-blanco;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+/* LIMPIA - SIN BORDES DEL "NOSOTROS" */
+.multimedia-container {
+  width: 100%;
+  max-width: 1400px;   // <- SE VE MÁS ANCHO
+  margin: 0 auto;
+}
+
+/* TÍTULO CENTRAL */
+.multimedia-title {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+  color: $color-marron-medio;
+  font-weight: $font-weight-bold;
+}
