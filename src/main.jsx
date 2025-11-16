@@ -1,8 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
+
 import "bootstrap/dist/css/bootstrap.min.css";
-// import "./styles/main.scss";
+
+import "./styles/main.scss"; // 👉 ESTE SIEMPRE AL FINAL
+
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(

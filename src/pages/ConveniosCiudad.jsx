@@ -16,7 +16,7 @@ function ConveniosCiudad() {
 
       {categorias.map((cat) => (
         <div key={cat} className="mb-5">
-          <h2 className="mb-4 text-primary text-uppercase">{cat}</h2>
+          <h2 className="mb-4 city-title">{cat}</h2>
           <Row>
             {ConvenioData.filter((item) => item.Category === cat).map(
               (convenio, index) => (

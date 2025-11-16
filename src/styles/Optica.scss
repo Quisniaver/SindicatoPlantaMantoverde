@@ -1,48 +1,33 @@
 @import './variables.scss';
 @import './mixins.scss';
 
-// 🔹 MIXINS BASE
-@mixin flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@mixin flex-between {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-@mixin card-style {
-  background: $color-blanco;
-  padding: $spacing-md;
-  border-radius: $border-radius-lg;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
+/* ================================
+   🔹 MIXINS BASE (corregidos)
+================================ */
 @mixin responsive($breakpoint) {
-  @if $breakpoint == mobile {
+  @if $breakpoint == "mobile" {
     @media (max-width: 768px) {
       @content;
     }
   }
-  @else if $breakpoint == tablet {
+  @else if $breakpoint == "tablet" {
     @media (max-width: 1024px) {
       @content;
     }
   }
 }
 
-/* 🔹 RESET Y ESTILOS BASE */
+/* ================================
+   🔹 RESET Y ESTILOS BASE
+================================ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: $font-family-base;
+html, body {
+  font-family: 'Inter', sans-serif !important;
   line-height: 1.6;
   color: $color-texto-oscuro;
   background-color: $color-fondo;
@@ -53,25 +38,25 @@ body {
   margin: 0 auto;
   padding: 0 $spacing-md;
 
-  @include responsive(mobile) {
+  @include responsive("mobile") {
     padding: 0 $spacing-sm;
   }
 }
 
-/* 🔹 HEADER */
+/* ================================
+   🔹 HEADER
+================================ */
 .header {
   background: $gradiente-header;
-  color: $color-texto-oscuro;
   padding: $spacing-sm 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 100;
+  color: $color-texto-oscuro;
 
   .container {
-    @include flex-between;
-
-    @include responsive(mobile) {
+    @include flex-between();
+    @include responsive("mobile") {
       flex-direction: column;
       gap: $spacing-sm;
     }
@@ -79,7 +64,7 @@ body {
 }
 
 .logo {
-  @include flex-center;
+  @include flex-center();
   gap: $spacing-sm;
 
   &-icon {
@@ -90,11 +75,11 @@ body {
   &-text {
     h1 {
       font-size: 1.8rem;
-      color: $color-verde-oscuro;
+      color: $color-marron-oscuro;
       font-weight: $font-weight-bold;
       margin-bottom: 0.25rem;
 
-      @include responsive(mobile) {
+      @include responsive("mobile") {
         font-size: 1.5rem;
       }
     }
@@ -106,36 +91,40 @@ body {
   }
 }
 
-/* 🔹 NAVBAR */
+/* ================================
+   🔹 NAVBAR
+================================ */
 .nav {
   display: flex;
   gap: $spacing-md;
 
-  @include responsive(mobile) {
+  @include responsive("mobile") {
     gap: $spacing-sm;
     flex-wrap: wrap;
     justify-content: center;
   }
 
   &-link {
-    color: $color-texto-oscuro;
+    color: $color-texto-oscuro !important;
     text-decoration: none;
     font-weight: $font-weight-bold;
     padding: $spacing-xs $spacing-sm;
     border-radius: $border-radius;
-    transition: all 0.3s ease;
     border: 2px solid transparent;
+    transition: all 0.3s ease;
 
     &:hover,
     &.active {
       background-color: $color-verde-corporativo;
-      color: $color-texto-claro;
+      color: $color-texto-claro !important;
       border-color: $color-verde-oscuro;
     }
   }
 }
 
-/* 🔹 HERO SECTION */
+/* ================================
+   🔹 HERO SECTION
+================================ */
 .hero {
   background: $color-blanco;
   padding: $spacing-xl 0;
@@ -146,7 +135,7 @@ body {
     gap: $spacing-xl;
     align-items: center;
 
-    @include responsive(tablet) {
+    @include responsive("tablet") {
       grid-template-columns: 1fr;
       text-align: center;
       gap: $spacing-lg;
@@ -156,30 +145,28 @@ body {
   &-content {
     h1 {
       font-size: 3rem;
-      margin-bottom: $spacing-sm;
       font-weight: $font-weight-bold;
-      line-height: 1.2;
 
-      @include responsive(mobile) {
+      @include responsive("mobile") {
         font-size: 2.2rem;
       }
     }
 
     p {
       font-size: 1.2rem;
-      margin-bottom: $spacing-lg;
       opacity: 0.9;
+      margin-bottom: $spacing-lg;
     }
   }
 
   &-image {
-    @include flex-center;
+    @include flex-center();
 
     .glasses-icon {
       font-size: 8rem;
       opacity: 0.8;
 
-      @include responsive(mobile) {
+      @include responsive("mobile") {
         font-size: 6rem;
       }
     }
@@ -203,11 +190,13 @@ body {
   }
 }
 
-/* 🔹 MAIN CONTENT */
+/* ================================
+   🔹 MAIN CONTENT
+================================ */
 .main-content {
   padding: $spacing-xl 0;
 
-  @include responsive(mobile) {
+  @include responsive("mobile") {
     padding: $spacing-lg 0;
   }
 }
@@ -217,25 +206,27 @@ body {
   grid-template-columns: 300px 1fr;
   gap: $spacing-lg;
 
-  @include responsive(tablet) {
+  @include responsive("tablet") {
     grid-template-columns: 1fr;
     gap: $spacing-md;
   }
 }
 
-/* 🔹 SIDEBAR */
+/* ================================
+   🔹 SIDEBAR
+================================ */
 .sidebar {
   display: flex;
   flex-direction: column;
   gap: $spacing-md;
 
-  @include responsive(tablet) {
+  @include responsive("tablet") {
     order: 2;
   }
 }
 
 .sidebar-card {
-  @include card-style;
+  @include card-style();
   border-left: 4px solid $color-verde-corporativo;
 
   h3 {
@@ -263,7 +254,9 @@ body {
   }
 }
 
-/* 🔹 CONTACT SIDEBAR */
+/* ================================
+   🔹 CONTACT SIDEBAR
+================================ */
 .contact-sidebar {
   display: flex;
   flex-direction: column;
@@ -298,16 +291,18 @@ body {
   }
 }
 
-/* 🔹 SECCIÓN DE BENEFICIOS (NARRATIVA) */
+/* ================================
+   🔹 BENEFICIOS (100% CAFÉ)
+================================ */
 .content-area {
-  @include card-style;
+  @include card-style();
   overflow: hidden;
   padding: 2rem;
 
   h2 {
     text-align: center;
     margin-bottom: 1.5rem;
-    color: $color-verde-oscuro;
+    color: $color-marron-oscuro !important;   /* TÍTULO CAFÉ */
     font-size: 2rem;
     font-weight: $font-weight-bold;
   }
@@ -317,28 +312,30 @@ body {
     margin: 0 auto;
     font-size: 1.1rem;
     line-height: 1.7;
-    color: $color-texto-oscuro;
     background: #fff;
     border-radius: 12px;
     padding: 1.8rem 2rem;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 
+    /* 🔥 TODO EL TEXTO EN CAFÉ */
+    color: $color-marron-oscuro !important;
+
     p {
       margin-bottom: 1.3rem;
       text-align: justify;
-
-      strong {
-        color: $color-verde-corporativo;
-      }
+      color: $color-marron-oscuro !important;
     }
-  }
 
-  @include responsive(tablet) {
-    order: 1;
+    strong {
+      color: $color-marron-oscuro !important;  /* STRONG TAMBIÉN CAFÉ */
+      font-weight: 700;
+    }
   }
 }
 
-/* 🔹 MAPA */
+/* ================================
+   🔹 MAPA
+================================ */
 .map-container {
   margin-top: 1rem;
   width: 100%;
@@ -354,54 +351,12 @@ body {
   }
 }
 
-/* 🔹 PHOTO CAROUSEL */
-.photo-carousel {
-  padding: $spacing-xl 0;
-  background: $color-fondo;
-
-  .carousel-container {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    border-radius: $border-radius-lg;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border: 2px solid $color-verde-corporativo;
-  }
-
-  .carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    height: 500px;
-
-    @include responsive(mobile) {
-      height: 350px;
-    }
-  }
-
-  .carousel-slide {
-    min-width: 100%;
-    height: 100%;
-    position: relative;
-  }
-
-  .slide-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-/* 🔹 ANIMACIONES */
+/* ================================
+   🔹 ANIMACIONES
+================================ */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .benefits-text p {
@@ -414,7 +369,9 @@ body {
   &:nth-child(4) { animation-delay: 0.3s; }
 }
 
-/* 🔹 UTILIDADES */
+/* ================================
+   🔹 UTILIDADES
+================================ */
 .text-center { text-align: center; }
 .mb-1 { margin-bottom: $spacing-sm; }
 .mb-2 { margin-bottom: $spacing-md; }

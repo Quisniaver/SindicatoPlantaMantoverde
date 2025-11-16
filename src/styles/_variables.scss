@@ -1,42 +1,127 @@
-// _variables.scss - Paleta optimizada basada en tu gradiente
+// =========================================================
+// 🎨 PALETA DE COLORES - SINDICATO MANTOVERDE
+// =========================================================
+
+// Colores base
 $color-blanco: #FFFFFF;
 $color-gris-claro: #D4D4D4;
 $color-gris-medio: #898B89;
 $color-gris-oscuro: #727272;
-$color-marron-oscuro: #6B421A;
+
+$color-marron-oscuro: #854e16;
 $color-marron-medio: #A77C48;
-$color-marron-claro: #edba7c;
+$color-marron-claro: #d58b41;
+
+// Verdes institucionales
 $color-verde-oscuro: #1A5923;
 $color-verde-medio: #1F6E28;
 $color-verde-corporativo: #209134;
-$color-verde-claro: #0a6813;
+$color-verde-claro: rgba(32, 145, 52, 0.85); // más suave
 
-// Gradientes simplificados
-$gradiente-principal: linear-gradient(135deg, $color-marron-oscuro 70%, $color-verde-corporativo 100%);
-$gradiente-secundario: linear-gradient(135deg, $color-verde-medio 0%, $color-verde-claro 100%);
-$gradiente-dorado: linear-gradient(135deg, $color-marron-medio 0%, $color-marron-oscuro 100%);
-$gradiente-header: linear-gradient(90deg, $color-blanco 0%, $color-gris-claro 12%, $color-gris-medio 17%, $color-marron-oscuro 23%, $color-verde-oscuro 33%, $color-verde-medio 40%, $color-verde-corporativo 75%, $color-verde-claro 80%, $color-gris-oscuro 83%, $color-gris-claro 87%, $color-blanco 100%);
+// Verdes transparentados
+$verde-10: rgba(32, 145, 52, 0.10);
+$verde-20: rgba(32, 145, 52, 0.20);
+$verde-35: rgba(32, 145, 52, 0.35);
+$verde-50: rgba(32, 145, 52, 0.50);
 
-// Colores para componentes
-$color-texto-oscuro: #1E293B;
-$color-texto-claro: #FFFFFF;
-$color-fondo: #F8FAFC;
-$color-borde: #E2E8F0;
 
-// Tipografía
-$font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+// =========================================================
+// 📝 COLORES DE TEXTO Y FONDOS
+// =========================================================
+
+$color-texto-oscuro: #855303; // azul grisáceo elegante
+$color-texto-claro: #FFFFFF;  // para textos sobre fondo oscuro
+$color-fondo: #F8FAFC;        // fondo suave tipo tailwind
+$color-borde: #E2E8F0;        // borde gris claro profesional
+
+
+// =========================================================
+// 🌈 GRADIENTES
+// =========================================================
+
+// Gradiente institucional
+$gradiente-principal: linear-gradient(
+  135deg,
+  $color-marron-oscuro 0%,
+  $color-verde-corporativo 100%
+);
+
+// Gradiente secundario
+$gradiente-secundario: linear-gradient(
+  135deg,
+  $color-verde-oscuro 0%,
+  $color-verde-medio 40%,
+  $color-verde-corporativo 100%
+);
+
+// Gradiente dorado
+$gradiente-dorado: linear-gradient(
+  135deg,
+  $color-marron-medio 0%,
+  $color-marron-oscuro 100%
+);
+
+// Header optimizado
+$gradiente-header: linear-gradient(
+  90deg,
+  $color-blanco 0%,
+  $color-gris-claro 12%,
+  $color-marron-claro 20%,
+  $color-marron-oscuro 32%,
+  $color-verde-oscuro 45%,
+  $color-verde-medio 55%,
+  $color-verde-corporativo 75%,
+  $color-verde-claro 90%,
+  $color-blanco 100%
+);
+
+// Gradiente verde suave
+$gradiente-verde-suave: linear-gradient(
+  135deg,
+  rgba(5, 100, 3, 0.85) 0%,
+  $color-verde-medio 35%,
+  $color-verde-oscuro 70%,
+  rgba(5, 100, 3, 0.85) 100%
+);
+
+
+// =========================================================
+// 🅰 TIPOGRAFÍA
+// =========================================================
+$font-family-base: 'Inter' !important;
+
 $font-weight-normal: 400;
-$font-weight-bold: 600;
 $font-weight-medium: 500;
 $font-weight-semibold: 600;
+$font-weight-bold: 700;
 
-// Espaciados
+
+// =========================================================
+// 📏 ESPACIADOS
+// =========================================================
 $spacing-xs: 0.5rem;
 $spacing-sm: 1rem;
 $spacing-md: 1.5rem;
 $spacing-lg: 2rem;
 $spacing-xl: 3rem;
 
-// Bordes
+
+// =========================================================
+// 🟦 BORDES
+// =========================================================
 $border-radius: 8px;
-$border-radius-lg: 12px;
+$border-radius-lg: 14px;
+
+body {
+  margin: 0;
+  padding-top:1px;   // ← aquí ajustas según la altura del navbar
+  background-color: $color-fondo;
+  color: $color-marron-oscuro
+  ;
+  font-family: 'Inter', sans-serif !important;
+}
+.city-title {
+  color: $color-marron-medio;  // o el color que quieras
+  font-weight: 700;
+  font-family: 'Inter', sans-serif !important;
+}

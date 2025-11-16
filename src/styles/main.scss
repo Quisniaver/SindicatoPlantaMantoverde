@@ -2,6 +2,11 @@
 @import "./mixins";
 
 // Estilos globales aquí
+html, body {
+  font-family: 'Inter', sans-serif !important;
+  padding-top:40px;
+}
+
 body {
   font-family: $font-family-base;
   background-color: $color-fondo;
