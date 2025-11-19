@@ -1,0 +1,58 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.doc-wrapper {
+  text-align: center;
+  padding: $spacing-xl 0;
+
+  .doc-title {
+    font-size: 2rem;
+    font-weight: $font-weight-bold;
+    color: $color-marron-oscuro;
+    margin-bottom: $spacing-lg;
+  }
+}
+
+.doc-card {
+  @include card-style();
+  width: 320px;
+  margin: 0 auto;
+  padding: $spacing-lg;
+  border-left: 4px solid $color-verde-corporativo;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+
+  .doc-icon {
+    width: 90px;
+    margin-bottom: $spacing-md;
+    opacity: 0.9;
+  }
+
+  .doc-name {
+    font-size: 1.2rem;
+    color: $color-texto-oscuro;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-md;
+  }
+}
+
+.download-btn {
+  display: inline-block;
+  background: $gradiente-secundario;
+  color: $color-texto-claro;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: $border-radius;
+  font-weight: $font-weight-bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba($color-verde-corporativo, 0.2);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

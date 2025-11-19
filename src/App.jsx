@@ -8,6 +8,7 @@ import Nosotros from "./pages/Nosotros";
 import Servicios from "./pages/Servicios";
 import Contacto from "./pages/Contacto";
 import Multimedia from "./pages/Multimedia";
+import Documentos from "./pages/Documentos";
 
 // 🟦 Convenios y Beneficios
 import Clinica from "./pages/Clinica";
@@ -24,6 +25,7 @@ function App() {
         <Route path="/Servicios" element={<Servicios />} />
         <Route path="/Contacto" element={<Contacto />} />
         <Route path="/Multimedia" element={<Multimedia />} />
+        <Route path="/Documentos" element={<Documentos />} />
 
         {/* 🟦 Convenios y Beneficios */}
         <Route path="/Clinica" element={<Clinica />} />
