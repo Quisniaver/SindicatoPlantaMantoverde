@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Carousel } from "react-bootstrap";
 import DirectivaCard from "../components/DirectivaCard";
 import { directivaData } from "../data/directivaData";
-import "../styles/nosotros.scss";
+import "../styles/Nosotros.scss";
 
 const Nosotros = () => {
   const [activeSection, setActiveSection] = useState("nosotros");

@@ -11,7 +11,7 @@ import Multimedia from "./pages/Multimedia";
 import Documentos from "./pages/Documentos";
 
 // 🟦 Convenios y Beneficios
-import Clinica from "./pages/Clinica";
+
 import Optica from "./pages/Optica";
 import ConveniosCiudad from "./pages/ConveniosCiudad";
 
@@ -28,7 +28,7 @@ function App() {
         <Route path="/Documentos" element={<Documentos />} />
 
         {/* 🟦 Convenios y Beneficios */}
-        <Route path="/Clinica" element={<Clinica />} />
+
         <Route path="/Optica" element={<Optica />} />
         <Route path="/ConveniosCiudad" element={<ConveniosCiudad />} />
       </Routes>

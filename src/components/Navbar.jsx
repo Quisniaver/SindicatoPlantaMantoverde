@@ -23,9 +23,8 @@ function CustomNavbar() {
             <Nav.Link as={Link} to="/Nosotros">Nosotros</Nav.Link>
 
             <NavDropdown title="Convenios y Beneficios" id="convenios-dropdown">
-              <NavDropdown.Item as={Link} to="/Clinica">
-                Clínica Dental
-              </NavDropdown.Item>
+
+          
               <NavDropdown.Item as={Link} to="/Optica">
                 Óptica
               </NavDropdown.Item>
