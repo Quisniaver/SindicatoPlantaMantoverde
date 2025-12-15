@@ -1,7 +1,7 @@
 import React from "react";
 import { multimediaData } from "../data/multimediaData";
 import MultimediaCard from "../components/MultimediaCard";
-import "../styles/multimedia.scss";
+import "../styles/Multimedia.scss";
 
 const Multimedia = () => {
   return (
