@@ -1,6 +1,6 @@
 export const multimediaData = [
   {
-    descripcion: "Huelga en las oficinas de AngloAmerican Chile",
+    descripcion: "Funa en las oficinas de Anglo American Chile",
     fotos: ["huelga1", "huelga2", "miembros"],   // 🔥 array SIEMPRE
   },
   {

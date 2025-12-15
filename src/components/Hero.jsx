@@ -5,7 +5,7 @@ import "../styles/hero.scss";
 
 // 🔹 Imágenes del carrusel
 import slide1 from "../assets/logo.jpg";
-import slide2 from "../assets/logo.jpg";
+import slide2 from "../assets//Planta.jpg";
 import slide3 from "../assets/logo.jpg";
 
 function Hero() {
@@ -22,8 +22,8 @@ function Hero() {
               <div className="slide-overlay">
                 <Container>
                   <div className="slide-content">
-                    <h2>Bienvenidos al Sindicato</h2>
-                    <p>Trabajando unidos por tus derechos laborales</p>
+                    <h2>Sindicato Planta MantoVerde</h2>
+                    <p>Trabajando unidos</p>
                     <Link to="/nosotros" className="btn btn-slide">
                       Conócenos
                     </Link>
@@ -83,9 +83,7 @@ function Hero() {
               Representación, asesoría y apoyo para todos los trabajadores.
             </p>
             <div className="hero-buttons">
-              <Link to="/servicios" className="btn-primary">
-                Nuestros Servicios
-              </Link>
+            
               <Link to="/contacto" className="btn-secondary">
                 Contáctanos
               </Link>
@@ -98,7 +96,7 @@ function Hero() {
       {/* 🔹 Noticias debajo del Hero */}
       <section className="noticias-section">
         <Container>
-          <h2 className="noticias-title">Últimas Noticias</h2>
+          <h2 className="noticias-title">Eventos de Relevancia</h2>
 
           <div className="noticias-grid">
             {/* Card 1 */}

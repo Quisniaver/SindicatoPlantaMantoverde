@@ -1,26 +1,35 @@
-@import "./variables";
-
-/* CONTENEDOR GENERAL */
 .multimedia-page {
-  background: $color-blanco;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  padding: 3rem 1rem;
+  background: #ffffff;
+  padding: 80px 20px;
 }
 
-/* LIMPIA - SIN BORDES DEL "NOSOTROS" */
-.multimedia-container {
-  width: 100%;
-  max-width: 1400px;   // <- SE VE MÁS ANCHO
-  margin: 0 auto;
-}
-
-/* TÍTULO CENTRAL */
+/* ===== TÍTULO CON IMAGEN DE FONDO (SIN TRANSPARENCIA) ===== */
 .multimedia-title {
   text-align: center;
-  font-size: 2.8rem;
-  margin-bottom: 3rem;
-  color: $color-marron-medio;
-  font-weight: $font-weight-bold;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #ffffff;
+
+  /* ALTURA DEL BANNER */
+  padding: 110px 20px;
+  margin-bottom: 80px;
+
+  /* IMAGEN DIRECTA, SIN OPACITY */
+  background-image: url("/banner-galeria.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ===== SECCIONES ===== */
+.multimedia-section {
+  margin-bottom: 120px;
+}
+
+.multimedia-subtitle {
+  text-align: center;
+  font-size: 1.6rem;
+  color: #e8a14a;
+  margin-bottom: 40px;
+  font-weight: 600;
 }

@@ -12,3 +12,11 @@ body {
   background-color: $color-fondo;
   color: $color-texto-oscuro;
 }
+
+.carousel-item img,
+.slide img,
+.multimedia-slider img,
+.nosotros-carousel img {
+  opacity: 1 !important;
+  filter: none !important;
+}

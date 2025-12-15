@@ -6,19 +6,17 @@ import "../styles/multimedia.scss";
 const Multimedia = () => {
   return (
     <div className="multimedia-page">
-      <div className="multimedia-container">
 
-        <h1 className="multimedia-title">Galería Multimedia</h1>
+      <h1 className="multimedia-title">Galería de Fotos</h1>
 
-        {multimediaData.map((item, index) => (
-          <MultimediaCard
-            key={index}
-            descripcion={item.descripcion}
-            fotos={item.fotos}
-          />
-        ))}
+      {multimediaData.map((item, index) => (
+        <div key={index} className="multimedia-section">
+          <h2 className="multimedia-subtitle">{item.descripcion}</h2>
 
-      </div>
+          <MultimediaCard fotos={item.fotos} />
+        </div>
+      ))}
+
     </div>
   );
 };

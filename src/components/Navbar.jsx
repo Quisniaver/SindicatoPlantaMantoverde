@@ -10,7 +10,7 @@ function CustomNavbar() {
         {/* 🔹 Logo y nombre */}
         <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
           <img src={logo} alt="Logo Sindicato" className="logo me-2" />
-          <span className="brand-text fw-semibold">Sindicato Mantoverde</span>
+          <span className="brand-text fw-semibold">Sindicato Planta Mantoverde</span>
         </Navbar.Brand>
 
         {/* 🔹 Botón de colapso para móviles */}

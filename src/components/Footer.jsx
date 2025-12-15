@@ -34,13 +34,12 @@ function Footer() {
 
           {/* Columna 2: Enlaces rápidos */}
           <Col lg={2} md={6} className="mb-4">
-            <h6>Nuestros Servicios</h6>
+            <h6>Nosotros</h6>
             <ul className="footer-links">
-              <li><Link to="/servicios">Asesoría Legal</Link></li>
-              <li><Link to="/servicios">Capacitaciones</Link></li>
-              <li><Link to="/servicios">Bienestar Laboral</Link></li>
-              <li><Link to="/servicios">Clínica</Link></li>
-              <li><Link to="/servicios">Óptica</Link></li>
+              <li><Link to="/nosotros">Miembros</Link></li>
+              <li><Link to="/conveniosCiudad">Convenios</Link></li>
+              <li><Link to="/Multimedia">Multimedia</Link></li>
+           
             </ul>
           </Col>
 

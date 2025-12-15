@@ -15,7 +15,7 @@ function Estatutos() {
 
         <h3 className="doc-name">Estatutos del Sindicato</h3>
 
-        <a href="/docs/estatutos.pdf" download className="download-btn">
+        <a href="/documentos/estatutos.pdf" download className="download-btn">
           Descargar
         </a>
       </div>
