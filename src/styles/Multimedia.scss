@@ -33,3 +33,16 @@
   margin-bottom: 40px;
   font-weight: 600;
 }
+.card-noticia {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden; // 🔴 CLAVE
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.card-img {
+  width: 100%;
+  height: 280px;       // altura controlada
+  object-fit: cover;  // 🔴 CLAVE
+  display: block;
+}

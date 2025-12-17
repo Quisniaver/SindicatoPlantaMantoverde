@@ -5,6 +5,8 @@ const MultimediaCard = ({ fotos = [] }) => {
   const [index, setIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
+  if (!fotos.length) return null;
+
   const next = () => {
     if (animating) return;
     setAnimating(true);
@@ -38,7 +40,8 @@ const MultimediaCard = ({ fotos = [] }) => {
               key={i}
               className={`slide ${i === index ? "active" : ""}`}
             >
-              <img src={`/${foto}.jpg`} alt="" />
+              {/* 🔴 USAR LA RUTA TAL CUAL VIENE */}
+              <img src={foto} alt={`foto-${i}`} />
             </div>
           ))}
         </div>

@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Quisniaver/SindicatoPlantaMantoverde
   branch: main
 
 media_folder: "public/images"
@@ -11,7 +12,7 @@ collections:
     files:
       - name: "noticias"
         label: "Listado de noticias"
-        file: "public/content/noticias.json"
+        file: "content/noticias.json"
         format: "json"
         fields:
           - label: "Noticias"
@@ -29,7 +30,7 @@ collections:
     files:
       - name: "multimedia"
         label: "Galerías"
-        file: "public/content/multimedia.json"
+        file: "content/multimedia.json"
         format: "json"
         fields:
           - label: "Galerías"

@@ -1,3 +1,11 @@
 {
-  "items": []
+  "items": [
+    {
+      "id": 1,
+      "titulo": "Nueva Adquicision de Minera Manto Verde",
+      "texto": "Hace un par de meses se logro adquirir nueva maquinaria para la faena en minera manto ver\naqui ma detalles",
+      "imagen": "/images/whatsapp-image-2025-11-08-at-6.04.47-pm.jpeg",
+      "link": "https://www.youtube.com/shorts/WEXpDVpdvC0"
+    }
+  ]
 }
