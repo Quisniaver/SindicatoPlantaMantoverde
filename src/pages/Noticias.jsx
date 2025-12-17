@@ -1,5 +1,5 @@
 import "../styles/noticias.scss";
-import noticiasData from "../data/noticias.json";
+import noticiasData from "/content/noticias.json";
 
 const PLACEHOLDER_IMG =
   "https://via.placeholder.com/600x400?text=Noticia";

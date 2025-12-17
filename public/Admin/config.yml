@@ -6,13 +6,12 @@ media_folder: "public/images"
 public_folder: "/images"
 
 collections:
-
   - name: "noticias"
     label: "Noticias"
     files:
       - name: "noticias"
         label: "Listado de noticias"
-        file: "src/data/noticias.json"
+        file: "public/content/noticias.json"
         format: "json"
         fields:
           - label: "Noticias"
@@ -30,7 +29,7 @@ collections:
     files:
       - name: "multimedia"
         label: "Galerías"
-        file: "src/data/multimedia.json"
+        file: "public/content/multimedia.json"
         format: "json"
         fields:
           - label: "Galerías"

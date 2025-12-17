@@ -1,5 +1,5 @@
 import React from "react";
-import { multimediaData } from "../data/multimediaData";
+import multimediaData from "/content/multimedia.json";
 import MultimediaCard from "../components/MultimediaCard";
 import "../styles/Multimedia.scss";
 
