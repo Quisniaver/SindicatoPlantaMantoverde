@@ -7,39 +7,39 @@ public_folder: "/images"
 
 collections:
 
-  # ===================
-  # NOTICIAS
-  # ===================
   - name: "noticias"
     label: "Noticias"
-    file: "src/data/noticias.json"
-    format: "json"
-    fields:
-      - label: "Noticias"
-        name: "items"
-        widget: "list"
+    files:
+      - name: "noticias"
+        label: "Listado de noticias"
+        file: "src/data/noticias.json"
+        format: "json"
         fields:
-          - { label: "ID", name: "id", widget: "number" }
-          - { label: "Título", name: "titulo", widget: "string" }
-          - { label: "Texto", name: "texto", widget: "text", required: false }
-          - { label: "Imagen", name: "imagen", widget: "image", required: false }
-          - { label: "Link", name: "link", widget: "string", required: false }
+          - label: "Noticias"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "number" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Texto", name: "texto", widget: "text", required: false }
+              - { label: "Imagen", name: "imagen", widget: "image", required: false }
+              - { label: "Link", name: "link", widget: "string", required: false }
 
-  # ===================
-  # GALERÍA
-  # ===================
   - name: "multimedia"
     label: "Galería Multimedia"
-    file: "src/data/multimedia.json"
-    format: "json"
-    fields:
-      - label: "Galerías"
-        name: "items"
-        widget: "list"
+    files:
+      - name: "multimedia"
+        label: "Galerías"
+        file: "src/data/multimedia.json"
+        format: "json"
         fields:
-          - { label: "Descripción", name: "descripcion", widget: "string" }
-          - label: "Fotos"
-            name: "fotos"
+          - label: "Galerías"
+            name: "items"
             widget: "list"
-            field:
-              { label: "Imagen", name: "image", widget: "image" }
+            fields:
+              - { label: "Descripción", name: "descripcion", widget: "string" }
+              - label: "Fotos"
+                name: "fotos"
+                widget: "list"
+                field:
+                  { label: "Imagen", name: "image", widget: "image" }
