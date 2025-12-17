@@ -4,16 +4,15 @@
     <meta charset="utf-8" />
     <title>Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Decap CMS -->
-    <script src="https://unpkg.com/decap-cms@3.9.0/dist/decap-cms.js"></script>
   </head>
   <body>
     <!-- Contenedor donde se montará Decap CMS -->
     <div id="cms-root"></div>
 
-    <!-- Inicialización de Decap CMS -->
-    <script>
+    <!-- Inicialización de Decap CMS (v3.9.0) como módulo -->
+    <script type="module">
+      import CMS from 'https://unpkg.com/decap-cms@3.9.0/dist/decap-cms.esm.js';
+
       CMS.init({
         config: '/admin/config.yml', // ruta a tu config.yml
         root: '#cms-root'
