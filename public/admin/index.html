@@ -4,17 +4,25 @@
     <meta charset="utf-8" />
     <title>Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Decap CMS v3.8.0 clásico -->
+    
+    <!-- Decap CMS clásico v3.8.0 -->
     <script src="https://unpkg.com/decap-cms@3.8.0/dist/decap-cms.js"></script>
   </head>
   <body>
+    <!-- Contenedor donde CMS se montará -->
     <div id="cms-root"></div>
 
+    <!-- Inicialización de CMS después de que se haya cargado el script -->
     <script>
-      CMS.init({
-        config: '/admin/config.yml',
-        root: '#cms-root'
+      window.addEventListener('DOMContentLoaded', () => {
+        if (typeof CMS !== 'undefined') {
+          CMS.init({
+            config: '/admin/config.yml', // ruta correcta a tu config.yml
+            root: '#cms-root'
+          });
+        } else {
+          console.error('Decap CMS no se ha cargado');
+        }
       });
     </script>
   </body>
