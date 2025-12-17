@@ -1,6 +1,12 @@
-{
-  "version": 1,
-  "exclude": [
-    "/admin/*"
-  ]
-}
+[
+  {
+    "source": "/admin/*",
+    "destination": "/admin/index.html",
+    "status": 200
+  },
+  {
+    "source": "/*",
+    "destination": "/index.html",
+    "status": 200
+  }
+]
