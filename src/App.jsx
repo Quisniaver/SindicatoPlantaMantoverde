@@ -9,6 +9,7 @@ import Servicios from "./pages/Servicios";
 import Contacto from "./pages/Contacto";
 import Multimedia from "./pages/Multimedia";
 import Documentos from "./pages/Documentos";
+import Noticias from "./pages/Noticias";
 
 // 🟦 Convenios y Beneficios
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/Contacto" element={<Contacto />} />
         <Route path="/Multimedia" element={<Multimedia />} />
         <Route path="/Documentos" element={<Documentos />} />
+        <Route path="/Noticias" element={<Noticias />} />
 
         {/* 🟦 Convenios y Beneficios */}
 

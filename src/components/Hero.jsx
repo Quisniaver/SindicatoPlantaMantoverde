@@ -6,7 +6,7 @@ import "../styles/hero.scss";
 // 🔹 Imágenes del carrusel
 import slide1 from "../assets/logo.jpg";
 import slide2 from "../assets//Planta.jpg";
-import slide3 from "../assets/logo.jpg";
+import slide3 from "../assets/Planta2.png";
 
 function Hero() {
   return (
@@ -43,9 +43,8 @@ function Hero() {
                   <div className="slide-content">
                     <h2>Servicios para Asociados</h2>
                     <p>Asesoría legal, capacitación y beneficios exclusivos</p>
-                    <Link to="/servicios" className="btn btn-slide">
-                      Ver Servicios
-                    </Link>
+                   
+                    
                   </div>
                 </Container>
               </div>
@@ -60,11 +59,9 @@ function Hero() {
               <div className="slide-overlay">
                 <Container>
                   <div className="slide-content">
-                    <h2>Únete a Nuestra Comunidad</h2>
+                    <h2>Únete a Nuestra Causa</h2>
                     <p>Juntos logramos mejores condiciones laborales</p>
-                    <Link to="/contacto" className="btn btn-slide">
-                      Contáctanos
-                    </Link>
+                  
                   </div>
                 </Container>
               </div>
