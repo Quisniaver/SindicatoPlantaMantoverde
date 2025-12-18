@@ -2,8 +2,8 @@ backend:
   name: github
   repo: Quisniaver/SindicatoPlantaMantoverde
   branch: main
-  base_url: /api
-  auth_endpoint: auth
+  auth_endpoint: https://cms-auth.nico-vegav.workers.dev/auth
+
 
 
 media_folder: "public/images"
