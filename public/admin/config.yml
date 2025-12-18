@@ -2,7 +2,9 @@ backend:
   name: github
   repo: Quisniaver/SindicatoPlantaMantoverde
   branch: main
-  auth_endpoint: https://cms-auth.nico-vegav.workers.dev/auth
+  base_url: https://cms-auth.nico-vegav.workers.dev
+  auth_endpoint: auth
+
 
 
 
