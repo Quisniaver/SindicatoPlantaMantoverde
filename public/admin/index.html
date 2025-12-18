@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <title>Admin</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <script src="https://unpkg.com/decap-cms@3.9.0/dist/decap-cms.js"></script>
-</head>
-<body>
-  <div id="nc-root"></div>
+    <!-- Decap CMS -->
+    <script src="https://unpkg.com/decap-cms@3.9.0/dist/decap-cms.js"></script>
+  </head>
 
-  <script>
-    window.addEventListener("load", () => {
-      CMS.init({
-        config: "/admin/config.yml"
-      });
-    });
-  </script>
-</body>
+  <body>
+    <div id="nc-root"></div>
+
+    <script>
+      if (window.CMS) {
+        CMS.init({
+          config: "/admin/config.yml"
+        });
+      } else {
+        console.error("Decap CMS no se cargó");
+      }
+    </script>
+  </body>
 </html>
