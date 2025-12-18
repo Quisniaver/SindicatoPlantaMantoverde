@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <title>Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Decap CMS -->
-    <script src="https://unpkg.com/decap-cms@3.9.0/dist/decap-cms.js"></script>
   </head>
+
   <body>
-    <!-- ESTE ID ES OBLIGATORIO -->
+    <!-- EL ROOT DEBE EXISTIR ANTES -->
     <div id="nc-root"></div>
+
+    <!-- Decap CMS SE CARGA DESPUÉS -->
+    <script
+      src="https://unpkg.com/decap-cms@3.9.0/dist/decap-cms.js"
+      defer
+    ></script>
   </body>
 </html>
